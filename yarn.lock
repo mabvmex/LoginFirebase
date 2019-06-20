@@ -6441,6 +6441,11 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
+sweetalert2@^8.12.2:
+  version "8.12.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.12.2.tgz#5e66138d65bfd40dec63aaadbfebdc161235c86d"
+  integrity sha512-niq06UMOPkdDOkpNE3tt6aiAylUMd9MiT7eA9QGm6zqsdPLtLFGxhswiqvUut+pIQ3gRL7fu28n6/3soqr3Q8Q==
+
 symbol-observable@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
