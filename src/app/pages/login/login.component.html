@@ -11,7 +11,8 @@
           ingresar tu correo electrónico</span>
 
         <div class="wrap-input100 m-b-16">
-          <input class="input100" type="email" name="email" [(ngModel)]="usuario.email" placeholder="email" required email>
+          <input class="input100" type="email" name="email" [(ngModel)]="usuario.email" placeholder="email" required
+            email>
 
           <span class="focus-input100"></span>
         </div>
@@ -19,13 +20,14 @@
         <span *ngIf="flogin.submitted && flogin.controls['pass'].errors" class="text-danger animated shake">La
           contraseña debe de ser más de 6 caracteres</span>
         <div class="wrap-input100 m-b-16" data-validate="Password is required">
-          <input class="input100" type="password" name="pass" placeholder="Password" [(ngModel)]="usuario.password" required minlength="6">
+          <input class="input100" type="password" name="pass" placeholder="Password" [(ngModel)]="usuario.password"
+            required minlength="6">
           <span class="focus-input100"></span>
         </div>
 
         <div class="flex-sb-m w-full p-t-3 p-b-24">
           <div class="contact100-form-checkbox">
-            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+            <input class="input-checkbox100" [(ngModel)]="recuerdame" id="ckb1" type="checkbox" name="remember-me">
             <label class="label-checkbox100" for="ckb1">
               Recordar mi usuario
             </label>
@@ -33,7 +35,7 @@
 
           <div>
             <a [routerLink]="['/registro']" class="txt1">
-              ¿No tienes cuenta?
+              ¿No tienes cuenta? / Regístrar
             </a>
           </div>
         </div>

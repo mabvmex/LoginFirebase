@@ -15,9 +15,10 @@ import { Router } from '@angular/router';
 export class RegistroComponent implements OnInit {
 
   usuario: UsuarioModel;
+  recuerdame = false;
 
   constructor(private auth: AuthService,
-    private router: Router) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.usuario = new UsuarioModel(); // this.usuario.email = 'mabvmex@gmail.com'; // Linea para forzar el correo electrónico predefinido.
@@ -36,6 +37,11 @@ export class RegistroComponent implements OnInit {
     this.auth.nuevoUsuario(this.usuario).subscribe(res => {
       // console.log(res);
       Swal.close();
+
+      if (this.recuerdame) {
+        localStorage.setItem('email', this.usuario.email);
+      }
+
       this.router.navigateByUrl('/home');
 
     }, (e) => {
