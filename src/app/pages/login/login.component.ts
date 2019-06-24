@@ -18,15 +18,15 @@ export class LoginComponent implements OnInit {
   usuario: UsuarioModel = new UsuarioModel();
   recuerdame = false;
 
-  constructor(private auth: AuthService,
-              private router: Router) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
+
     if (localStorage.getItem('email')) {
       this.usuario.email = localStorage.getItem('email');
       this.recuerdame = true;
     }
-  }
+}
 
   login(form: NgForm) {
 
@@ -45,6 +45,9 @@ export class LoginComponent implements OnInit {
 
       if (this.recuerdame) {
         localStorage.setItem('email', this.usuario.email);
+      } else {
+        localStorage.removeItem('email');
+        this.recuerdame = false;
       }
       this.router.navigateByUrl('/home');
 
@@ -56,6 +59,7 @@ export class LoginComponent implements OnInit {
         title: 'Error al autenticar',
         text: e.error.error.message
       });
+      this.router.navigateByUrl('/login');
     }
     );
 
